@@ -6,17 +6,28 @@ import { AppComponent } from './app.component';
 import { StoreComponent } from './components/store/store.component';
 import { StoreModule } from './store/store.module';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     StoreComponent,
-    CartSummaryComponent
+    CartSummaryComponent,
+    CartDetailComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule
+    StoreModule,
+    RouterModule.forRoot([
+      {path: "store", component: StoreComponent},
+      {path: "cart", component: CartDetailComponent},
+      {path: "checkout", component: CheckoutComponent},
+      {path: "**", redirectTo: "/store"}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
