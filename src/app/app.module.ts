@@ -10,6 +10,7 @@ import { CartDetailComponent } from './components/cart-detail/cart-detail.compon
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RouterModule } from '@angular/router';
 import { StoreFirstGuard } from './storeFirst.guard';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { StoreFirstGuard } from './storeFirst.guard';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     StoreModule,
     RouterModule.forRoot([
       {path: "store", component: StoreComponent, canActivate:[StoreFirstGuard]},
