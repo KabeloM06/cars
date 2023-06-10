@@ -3,6 +3,7 @@
         <div class="bg-dark text-white p-2">
             <span class="navbar-brand ml-2">
                 CAR STORE
+                <app-cart-summary></app-cart-summary>
             </span>
         </div>
     </div>
@@ -36,6 +37,10 @@
                 </h4>
                 <div class="card-text bg-white p-1">
                     {{product.description}}
+                    <button class="btn btn-success btn-sm float-end"
+                            (click)="addProductToCart(product)">
+                        Add To Cart
+                    </button>
                 </div>
                 
             </div>
