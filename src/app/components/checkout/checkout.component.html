@@ -20,7 +20,7 @@
         <label>Name</label>
         <input class="form-control" #name="ngModel" name="name"
                 [(ngModel)]="order.name" required>
-            <span>
+            <span *ngIf="submitted && name.invalid" class="text-danger">
                 Please enter your name
             </span>
     </div>
