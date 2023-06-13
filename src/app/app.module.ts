@@ -11,6 +11,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RouterModule } from '@angular/router';
 import { StoreFirstGuard } from './storeFirst.guard';
 import { FormsModule } from '@angular/forms';
+//import { AuthComponent } from './admin/auth/auth.component';
+//import { AdminComponent } from './admin/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FormsModule } from '@angular/forms';
     StoreComponent,
     CartSummaryComponent,
     CartDetailComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,9 @@ import { FormsModule } from '@angular/forms';
       {path: "store", component: StoreComponent, canActivate:[StoreFirstGuard]},
       {path: "cart", component: CartDetailComponent, canActivate:[StoreFirstGuard]},
       {path: "checkout", component: CheckoutComponent, canActivate:[StoreFirstGuard]},
+      {path: "admin", loadChildren: () => import("./admin/admin.module")
+                          .then(m => m.AdminModule),
+                        canActivate: [StoreFirstGuard]},
       {path: "**", redirectTo: "/store"}
     ])
   ],
