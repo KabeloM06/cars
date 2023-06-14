@@ -18,7 +18,8 @@ import { AuthService } from "./auth.service";
         OrderRepository,
         {provide: StaticDataSource,
         useClass: RestDataSource},
-        AuthService
+        AuthService,
+        RestDataSource
     ]
 })
 export class ModelModule{}
