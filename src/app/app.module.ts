@@ -11,6 +11,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RouterModule } from '@angular/router';
 import { StoreFirstGuard } from './storeFirst.guard';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { AuthComponent } from './admin/auth/auth.component';
 //import { AdminComponent } from './admin/admin/admin.component';
 
@@ -37,7 +38,8 @@ import { FormsModule } from '@angular/forms';
                           .then(m => m.AdminModule),
                         canActivate: [StoreFirstGuard]},
       {path: "**", redirectTo: "/store"}
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [StoreFirstGuard],
   bootstrap: [AppComponent]
