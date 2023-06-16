@@ -79,3 +79,20 @@ table[mat-table] .mat-column-buttons {
     float: right; 
     font-size: 14px; 
 }
+
+mat-form-field { 
+    width: 100%;
+}
+
+mat-form-field:first-child { 
+    margin-top: 20px;
+}
+
+form button[mat-flat-button] { 
+    margin-top: 10px; 
+    margin-right: 10px;
+}
+
+h3.heading { 
+    margin-top: 20px; 
+}
